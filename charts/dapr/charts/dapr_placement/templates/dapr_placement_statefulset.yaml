@@ -147,11 +147,7 @@ spec:
 {{- end }}
 {{- if eq .Values.global.daprControlPlaneOs "linux" }}
         securityContext:
-{{- if eq .Values.cluster.forceInMemoryLog true }}
           runAsNonRoot: {{ .Values.runAsNonRoot }}
-{{- else }}
-          runAsUser: 0
-{{- end }}
 {{- if eq .Values.debug.enabled true }}
           capabilities:
             add:
